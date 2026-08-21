@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Royal Play - Escoba</title>
+
+    <link rel="stylesheet" href="escoba.css">
+</head>
+
+<!-- ========================================
+     CENTRO DE AYUDA
+======================================== -->
+
+<div id="ventanaAyuda" class="ventana-ayuda">
+
+    <div class="contenido-ayuda">
+
+        <button class="cerrar-ayuda" onclick="cerrarAyuda()">
+            ✕
+        </button>
+
+        <h1>👑 CENTRO DE AYUDA</h1>
+        <p class="subtitulo">
+            Todo lo que necesitas saber para jugar Escoba de 15
+        </p>
+
+        <div class="ayuda-seccion">
+
+            <h2>🃏 Valor de las cartas</h2>
+
+            <p>
+                En Royal Play cada carta tiene un valor:
+            </p>
+
+            <ul>
+                <li>1 = 1 punto</li>
+                <li>2 = 2 puntos</li>
+                <li>3 = 3 puntos</li>
+                <li>4 = 4 puntos</li>
+                <li>5 = 5 puntos</li>
+                <li>6 = 6 puntos</li>
+                <li>7 = 7 puntos</li>
+                <li>Sota = 8 puntos</li>
+                <li>Caballo = 9 puntos</li>
+                <li>Rey = 10 puntos</li>
+            </ul>
+
+        </div>
+
+
+        <div class="ayuda-seccion">
+
+            <h2>🎮 ¿Cómo se juega?</h2>
+
+            <p>
+                El objetivo es formar grupos de cartas que sumen
+                exactamente <strong>15</strong>.
+            </p>
+
+            <p>
+                Primero selecciona una carta de tu mano.
+                Después selecciona una o varias cartas de la mesa.
+            </p>
+
+            <p>
+                Si todas las cartas seleccionadas suman 15,
+                podrás recogerlas.
+            </p>
+
+        </div>
+
+
+        <div class="ayuda-seccion">
+
+            <h2>➕ ¿Cómo se suma?</h2>
+
+            <p>
+                Debes sumar el valor de tu carta junto con las
+                cartas que seleccionaste de la mesa.
+            </p>
+
+            <div class="ejemplo-ayuda">
+                <strong>Ejemplo:</strong><br><br>
+
+                Tu carta: 7<br>
+                Mesa: 5 + 3<br><br>
+
+                <strong>7 + 5 + 3 = 15 ✅</strong>
+            </div>
+
+            <p>
+                Si el resultado no es 15, no puedes recoger
+                las cartas y tu carta se coloca en la mesa.
+            </p>
+
+        </div>
+
+
+        <div class="ayuda-seccion">
+
+            <h2>🧹 ¿Qué es una escoba?</h2>
+
+            <p>
+                Haces una <strong>escoba</strong> cuando utilizas
+                una carta para sumar 15 y consigues recoger
+                todas las cartas que estaban en la mesa.
+            </p>
+
+            <p>
+                En tu juego, una escoba suma un punto adicional.
+            </p>
+
+        </div>
+
+
+        <div class="ayuda-seccion">
+
+            <h2>❌ ¿Qué pasa si no puedo sumar 15?</h2>
+
+            <p>
+                No pasa nada. Debes colocar tu carta en la mesa
+                y el turno pasa a la computadora.
+            </p>
+
+            <p>
+                Esto también ocurre cuando seleccionas cartas
+                de la mesa pero la suma no da 15.
+            </p>
+
+        </div>
+
+
+        <div class="ayuda-seccion">
+
+            <h2>🏆 ¿Cómo se gana?</h2>
+
+            <p>
+                Al terminar las rondas se comparan los puntos
+                del jugador y de la computadora.
+            </p>
+
+            <p>
+                El jugador con más puntos gana la partida.
+            </p>
+
+        </div>
+
+
+        <div class="ayuda-seccion">
+
+            <h2>💡 Ejemplos rápidos</h2>
+
+            <div class="ejemplo-ayuda">
+                <strong>Ejemplo 1:</strong><br>
+                7 + 5 + 3 = 15 ✅
+            </div>
+
+            <div class="ejemplo-ayuda">
+                <strong>Ejemplo 2:</strong><br>
+                6 + 4 + 2 + 3 = 15 ✅
+            </div>
+
+            <div class="ejemplo-ayuda">
+                <strong>Ejemplo 3:</strong><br>
+                7 + 5 + 2 = 14 ❌
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<body>
+
+    <button class="botonInicio" onclick="irInicio()">
+        ← Inicio
+    </button>
+
+    <header>
+        <h1>♠ Royal Play ♠</h1>
+        <h2>Escoba de 15</h2>
+    </header>
+
+    <!-- ========================================
+        MENÚ DEL JUEGO
+    ======================================== -->
+
+    <div class="menu-juego">
+
+        <button class="boton-menu" onclick="abrirMenu()">
+            ☰
+        </button>
+
+        <div id="menuOpciones" class="menu-opciones">
+
+            <button onclick="pausarJuego()">
+                ⏸️ Pausa
+            </button>
+
+            <button onclick="nuevaPartida()">
+                🔄 Nueva partida
+            </button>
+            
+        </div>
+
+    </div>
+
+    <main class="mesa">
+
+        <!-- COMPUTADORA -->
+        <section class="zona-jugador">
+            <h3>Computadora</h3>
+
+            <div id="cartasPC" class="cartas">
+            </div>
+        </section>
+
+
+        <!-- CENTRO -->
+        <section class="centro">
+
+            <h3>Mesa</h3>
+
+            <div id="mesaCartas" class="cartas">
+            </div>
+
+            <!-- RECUADRO DE SUMA -->
+            <div id="sumaSeleccionada">
+                Suma: 0
+            </div>
+
+            <button
+                id="botonNuevaPartida"
+                onclick="nuevaPartida()"
+                style="display: none;"
+            >
+                🔄 Nueva partida
+            </button>
+            <p id="mensaje">
+                Tu turno: selecciona una carta
+            </p>
+
+            <button id="botonJugar" onclick="jugar()">
+                Jugar carta
+            </button>
+            <button onclick="abrirAyuda()" class="botonAyuda">
+                ❓ Centro de ayuda
+            </button>
+
+        </section>
+
+
+        <!-- JUGADOR -->
+        <section class="zona-jugador">
+
+            <h3>Jugador</h3>
+
+            <div id="cartasJugador" class="cartas">
+            </div>
+
+        </section>
+
+
+        <!-- MARCADOR -->
+        <section class="marcador">
+
+            <h3>Puntuación</h3>
+
+            <p>
+                Escobas:
+                <span id="escobas">0</span>
+            </p>
+
+            <p>
+                Puntos:
+                <span id="puntos">0</span>
+            </p>
+
+        </section>
+
+
+        <div class="mazo-restante">
+            <div id="mazoVisual" class="carta-mazo">
+                <img id="imgMazo" src="img/parte de atras.png" alt="Mazo">
+            </div>
+            <p id="textoMazo">
+                Cartas restantes: <span id="cartasRestantes">12</span>
+            </p>
+        </div>
+
+    </main>
+
+<script src="escoba.js"></script>
+
+</body>
+
+</html>

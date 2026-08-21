@@ -1,0 +1,1394 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0d0d0d;
+    color:white;
+    font-family:Poppins,sans-serif;
+}
+
+
+/* =========================
+   HEADER ROYAL PLAY
+========================= */
+
+header{
+    width:100%;
+
+    min-height:82px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:10px 45px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #030303,
+        #0b0b0b,
+        #030303
+    );
+
+    border-bottom:1px solid #D4AF37;
+
+    position:relative;
+
+    z-index:2000;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-width:230px;
+}
+
+.logo img{
+    width:58px;
+
+    height:58px;
+
+    object-fit:contain;
+
+    filter:
+    drop-shadow(
+        0 0 8px rgba(212,175,55,.25)
+    );
+}
+
+.logo h1{
+    font-family:Cinzel,serif;
+
+    color:#D4AF37;
+
+    font-size:24px;
+
+    letter-spacing:3px;
+
+    white-space:nowrap;
+}
+
+
+/* =========================
+   TEXTO CENTRAL
+========================= */
+
+.bienvenida-centro{
+    flex:1;
+
+    text-align:center;
+
+    color:#888;
+
+    font-size:13px;
+
+    letter-spacing:1px;
+
+    padding:0 25px;
+}
+
+.bienvenida-centro span{
+    color:#D4AF37;
+
+    margin:0 8px;
+
+    font-size:15px;
+}
+
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+nav{
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+}
+
+nav > a,
+.menu-juegos > a{
+    position:relative;
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    white-space:nowrap;
+
+    transition:.3s;
+}
+
+nav > a::after,
+.menu-juegos > a::after{
+    content:"";
+
+    position:absolute;
+
+    bottom:-8px;
+
+    left:0;
+
+    width:0;
+
+    height:2px;
+
+    background:#D4AF37;
+
+    transition:.3s;
+}
+
+nav > a:hover,
+.menu-juegos > a:hover{
+    color:#D4AF37;
+}
+
+nav > a:hover::after,
+.menu-juegos > a:hover::after{
+    width:100%;
+}
+
+
+/* =========================
+   FLECHA
+========================= */
+
+.flecha{
+    color:#D4AF37;
+
+    font-size:13px;
+
+    margin-left:3px;
+}
+
+
+/* =========================
+   BOTÓN INGRESAR
+========================= */
+
+.boton-ingresar{
+    padding:9px 20px !important;
+
+    background:#8B0000;
+
+    border:1px solid #8B0000;
+
+    border-radius:25px;
+
+    color:white !important;
+
+    transition:.3s !important;
+}
+
+.boton-ingresar::after{
+    display:none;
+}
+
+.boton-ingresar:hover{
+    background:#D4AF37;
+
+    border-color:#D4AF37;
+
+    color:#000 !important;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 5px 20px rgba(212,175,55,.2);
+}
+
+
+/* =========================
+   MENÚ JUEGOS
+========================= */
+
+.menu-juegos{
+    position:relative;
+
+    height:82px;
+
+    display:flex;
+
+    align-items:center;
+}
+
+
+/* =========================
+   SUBMENÚ
+========================= */
+
+.submenu{
+    position:absolute;
+
+    top:75px;
+
+    left:50%;
+
+    transform:
+    translateX(-50%)
+    translateY(10px);
+
+    width:175px;
+
+    padding:7px;
+
+    background:#0b0b0b;
+
+    border:1px solid #D4AF37;
+
+    border-radius:12px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.8);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+}
+
+.menu-juegos:hover .submenu{
+    opacity:1;
+
+    visibility:visible;
+
+    transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+.submenu a{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:9px;
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    border-radius:7px;
+
+    transition:.3s;
+}
+
+.submenu a:hover{
+    background:#8B0000;
+
+    color:#D4AF37;
+}
+
+.submenu a img{
+    width:32px;
+
+    height:32px;
+
+    object-fit:contain;
+}
+
+
+/* =========================
+   RESPONSIVE HEADER
+========================= */
+
+@media(max-width:1100px){
+
+    header{
+        padding:10px 25px;
+    }
+
+    .bienvenida-centro{
+        display:none;
+    }
+
+    nav{
+        gap:16px;
+    }
+
+}
+
+
+@media(max-width:800px){
+
+    header{
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:10px;
+
+        padding:12px 15px;
+    }
+
+    .logo{
+        justify-content:center;
+
+        width:100%;
+    }
+
+    nav{
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+        gap:15px;
+    }
+
+    .menu-juegos{
+        height:auto;
+    }
+
+    .submenu{
+        top:35px;
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    .logo img{
+        width:48px;
+
+        height:48px;
+    }
+
+    .logo h1{
+        font-size:20px;
+    }
+
+    nav > a,
+    .menu-juegos > a{
+        font-size:12px;
+    }
+
+    .boton-ingresar{
+        padding:7px 14px !important;
+    }
+
+}
+
+
+/* =====================================================
+   SECCIÓN PRINCIPAL DE JUEGOS
+===================================================== */
+
+.juegos{
+
+    position:relative;
+
+    min-height:850px;
+
+    padding:85px 7% 100px;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle at 50% 15%,
+        rgba(212,175,55,.08),
+        transparent 35%
+    );
+
+}
+
+
+/* LUCES DECORATIVAS */
+
+.juegos::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    top:100px;
+
+    left:-180px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(139,0,0,.16),
+        transparent 70%
+    );
+
+    pointer-events:none;
+
+}
+
+.juegos::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    top:250px;
+
+    right:-180px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(212,175,55,.10),
+        transparent 70%
+    );
+
+    pointer-events:none;
+
+}
+
+
+/* =====================================================
+   ENCABEZADO
+===================================================== */
+
+.juegos-header{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:850px;
+
+    margin:0 auto 60px;
+
+}
+
+
+.juegos-etiqueta{
+
+    display:inline-block;
+
+    color:#D4AF37;
+
+    border:1px solid rgba(212,175,55,.45);
+
+    background:rgba(212,175,55,.06);
+
+    padding:7px 20px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+}
+
+
+.juegos h2{
+
+    color:#D4AF37;
+
+    font-family:Cinzel,serif;
+
+    font-size:48px;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+
+    text-shadow:
+    0 0 20px rgba(212,175,55,.18);
+
+}
+
+
+.juegos-intro{
+
+    color:#aaa;
+
+    max-width:720px;
+
+    margin:0 auto;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+
+/* =====================================================
+   TARJETAS
+===================================================== */
+
+.cards{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+
+    position:relative;
+
+    min-height:440px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    padding:32px 28px 30px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #1d1d1d,
+        #111111
+    );
+
+    border:1px solid rgba(139,0,0,.8);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.45s;
+
+}
+
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    right:0;
+
+    height:3px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #D4AF37,
+        transparent
+    );
+
+    opacity:.6;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#D4AF37;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.7),
+    0 0 25px rgba(212,175,55,.22);
+
+}
+
+
+/* =====================================================
+   ETIQUETA CARD
+===================================================== */
+
+.card-tag{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    padding:5px 11px;
+
+    border-radius:20px;
+
+    background:#8B0000;
+
+    color:white;
+
+    font-size:10px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+
+/* =====================================================
+   IMAGEN
+===================================================== */
+
+.card-image{
+
+    width:180px;
+
+    height:180px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:15px 0 25px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(212,175,55,.10),
+        rgba(0,0,0,.15) 65%
+    );
+
+    border:1px solid rgba(212,175,55,.25);
+
+}
+
+
+.card img{
+
+    width:145px;
+
+    height:145px;
+
+    object-fit:contain;
+
+    transition:.5s;
+
+    filter:
+    drop-shadow(
+        0 8px 12px rgba(0,0,0,.5)
+    );
+
+}
+
+
+.card:hover img{
+
+    transform:scale(1.12) rotate(2deg);
+
+    filter:
+    drop-shadow(
+        0 0 15px rgba(212,175,55,.25)
+    );
+
+}
+
+
+/* =====================================================
+   TITULO
+===================================================== */
+
+.card h3{
+
+    color:#D4AF37;
+
+    font-family:Cinzel,serif;
+
+    font-size:25px;
+
+    margin-bottom:12px;
+
+}
+
+
+/* =====================================================
+   DESCRIPCIÓN
+===================================================== */
+
+.card p{
+
+    color:#aaa;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    min-height:72px;
+
+    margin-bottom:20px;
+
+}
+
+
+/* =====================================================
+   INFORMACIÓN
+===================================================== */
+
+.card-info{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:8px;
+
+    margin-bottom:22px;
+
+}
+
+
+.card-info span{
+
+    padding:5px 10px;
+
+    background:#111;
+
+    border:1px solid #333;
+
+    border-radius:15px;
+
+    color:#888;
+
+    font-size:11px;
+
+}
+
+
+/* =====================================================
+   BOTÓN
+===================================================== */
+
+.card-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    min-width:150px;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    background:#8B0000;
+
+    border:1px solid #a00000;
+
+    color:white;
+
+    font-size:14px;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+}
+
+
+.card-button:hover{
+
+    background:#D4AF37;
+
+    border-color:#D4AF37;
+
+    color:#080808;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 8px 20px rgba(212,175,55,.18);
+
+}
+
+
+/* =====================================================
+   SECCIÓN CARACTERÍSTICAS
+===================================================== */
+
+.caracteristicas{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:1050px;
+
+    margin:80px auto 0;
+
+    padding-top:55px;
+
+    border-top:1px solid rgba(212,175,55,.2);
+
+}
+
+
+.caracteristicas h3{
+
+    color:white;
+
+    font-family:Cinzel,serif;
+
+    font-size:28px;
+
+    margin-bottom:35px;
+
+}
+
+
+.caracteristicas-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+.caracteristica{
+
+    padding:25px 20px;
+
+    background:#121212;
+
+    border:1px solid #292929;
+
+    border-radius:15px;
+
+    transition:.35s;
+
+}
+
+
+.caracteristica:hover{
+
+    border-color:#8B0000;
+
+    transform:translateY(-5px);
+
+}
+
+
+.caracteristica-icon{
+
+    width:50px;
+
+    height:50px;
+
+    margin:0 auto 15px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#8B0000;
+
+    color:#D4AF37;
+
+    font-size:22px;
+
+}
+
+
+.caracteristica h4{
+
+    color:#D4AF37;
+
+    font-size:16px;
+
+    margin-bottom:8px;
+
+}
+
+
+.caracteristica p{
+
+    color:#888;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+}
+
+
+/* =====================================================
+   AVISO
+===================================================== */
+
+.aviso-juegos{
+
+    max-width:850px;
+
+    margin:55px auto 0;
+
+    padding:18px 25px;
+
+    border-left:3px solid #D4AF37;
+
+    background:rgba(212,175,55,.04);
+
+    text-align:left;
+
+}
+
+
+.aviso-juegos p{
+
+    color:#888;
+
+    font-size:12px;
+
+    line-height:1.7;
+
+}
+
+
+.aviso-juegos strong{
+
+    color:#D4AF37;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE JUEGOS
+===================================================== */
+
+@media(max-width:1000px){
+
+    .cards{
+
+        grid-template-columns:repeat(2,1fr);
+
+        max-width:760px;
+
+    }
+
+    .caracteristicas-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .juegos{
+
+        padding:60px 20px 80px;
+
+    }
+
+    .juegos h2{
+
+        font-size:34px;
+
+    }
+
+    .juegos-intro{
+
+        font-size:14px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+        max-width:420px;
+
+    }
+
+    .card{
+
+        min-height:420px;
+
+    }
+
+    .caracteristicas-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+@media(max-width:450px){
+
+    .juegos h2{
+
+        font-size:29px;
+
+    }
+
+    .juegos-etiqueta{
+
+        font-size:10px;
+
+        letter-spacing:2px;
+
+    }
+
+    .card{
+
+        padding:28px 20px;
+
+    }
+
+    .card-image{
+
+        width:155px;
+
+        height:155px;
+
+    }
+
+    .card img{
+
+        width:125px;
+
+        height:125px;
+
+    }
+
+}
+
+
+/* =====================================================
+   FOOTER
+   NO MODIFICADO
+===================================================== */
+
+footer{
+
+    background:#050505;
+
+    border-top:2px solid #D4AF37;
+
+    padding:55px 70px 20px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+footer::before{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:radial-gradient(
+        circle,
+        rgba(212,175,55,.07),
+        transparent 65%
+    );
+
+    top:-350px;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+
+.footer-contenido{
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1fr;
+
+    gap:60px;
+
+    position:relative;
+    z-index:2;
+}
+
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:18px;
+}
+
+.footer-logo img{
+    width:55px;
+}
+
+.footer-logo h2{
+    font-family:Cinzel,serif;
+
+    color:#D4AF37;
+
+    letter-spacing:3px;
+
+    font-size:24px;
+}
+
+.marca > p{
+    color:#999;
+
+    max-width:320px;
+
+    line-height:1.7;
+
+    font-size:14px;
+}
+
+
+.footer-columna h3{
+    font-family:Cinzel,serif;
+
+    color:#D4AF37;
+
+    font-size:17px;
+
+    margin-bottom:20px;
+
+    letter-spacing:1px;
+}
+
+.footer-columna > a{
+    display:block;
+
+    color:#aaa;
+
+    text-decoration:none;
+
+    margin-bottom:12px;
+
+    font-size:14px;
+
+    transition:.3s;
+}
+
+.footer-columna > a:hover{
+    color:#D4AF37;
+
+    transform:translateX(5px);
+}
+
+.footer-columna > p{
+    color:#888;
+
+    font-size:14px;
+
+    margin-bottom:10px;
+}
+
+
+.redes{
+    display:flex;
+
+    gap:10px;
+
+    margin-top:22px;
+}
+
+.redes a{
+    width:38px;
+    height:38px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border:1px solid #555;
+
+    border-radius:50%;
+
+    color:#D4AF37;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:.3s;
+}
+
+.redes a:hover{
+    background:#D4AF37;
+
+    color:#050505;
+
+    border-color:#D4AF37;
+
+    box-shadow:0 0 15px rgba(212,175,55,.4);
+
+    transform:translateY(-4px);
+}
+
+
+.footer-linea{
+    max-width:1200px;
+
+    height:1px;
+
+    margin:45px auto 20px;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        #D4AF37,
+        transparent
+    );
+}
+
+
+.footer-bottom{
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:#666;
+
+    font-size:12px;
+}
+
+.footer-bottom span:first-child{
+    color:#D4AF37;
+
+    letter-spacing:2px;
+}
+
+.footer-bottom p{
+    margin:0;
+}
+
+
+@media(max-width:850px){
+
+    .footer-contenido{
+        grid-template-columns:1fr 1fr;
+        gap:35px;
+    }
+
+    .valores{
+        grid-template-columns:1fr;
+    }
+
+    .contenedor{
+        padding:40px 30px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    header{
+        padding:15px 20px;
+    }
+
+    .logo h1{
+        font-size:20px;
+    }
+
+    nav{
+        gap:10px;
+    }
+
+    .footer-contenido{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:10px;
+
+        text-align:center;
+    }
+
+    footer{
+        padding:45px 30px 20px;
+    }
+
+}

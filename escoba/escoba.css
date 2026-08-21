@@ -1,0 +1,682 @@
+/* ===========================
+   ROYAL PLAY - ESCOBA DE 15
+   ESTILOS DEL JUEGO
+=========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Georgia', serif;
+}
+
+body{
+    background:
+    radial-gradient(circle, #3b0000, #090909);
+    min-height:100vh;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+header{
+    width:100%;
+    text-align:center;
+    padding:25px;
+    background:#050505;
+    border-bottom:3px solid gold;
+}
+
+header h1{
+    color:#d4af37;
+    font-size:45px;
+    text-shadow:
+    0 0 10px gold;
+}
+
+header h2{
+    color:white;
+    margin-top:10px;
+}
+
+/* MESA PRINCIPAL */
+.mesa{
+    margin-top:30px;
+    width:90%;
+    max-width:1200px;
+    min-height:650px;
+    background:
+    radial-gradient(circle,#006b35,#00351c);
+    border:8px solid #b8860b;
+    border-radius:30px;
+    box-shadow:
+    0 0 30px black;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+/* ZONAS DE JUGADORES */
+.zona-jugador,
+.centro{
+    text-align:center;
+}
+
+h3{
+    color:#ffd700;
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+/* CARTAS */
+.cartas{
+    min-height:120px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.carta{
+    width:80px;
+    height:120px;
+    background:white;
+    color:black;
+    border-radius:12px;
+    border:3px solid gold;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:25px;
+    box-shadow:
+    0 5px 10px black;
+    transition:0.3s;
+}
+
+.carta:hover{
+    transform:
+    translateY(-15px)
+    scale(1.05);
+    box-shadow:
+    0 0 20px gold;
+}
+
+/* CARTA SELECCIONADA */
+.carta.seleccionada{
+    border:5px solid red;
+    transform:
+    translateY(-20px);
+}
+
+/* MENSAJE */
+#mensaje{
+    margin:20px;
+    font-size:20px;
+    color:#ffeaa7;
+}
+
+/* BOTON */
+button{
+    padding:15px 40px;
+    background:
+    linear-gradient(
+    #d4af37,
+    #8b6508
+    );
+    color:black;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    box-shadow:
+    0 0 20px gold;
+}
+
+/* MARCADOR */
+.marcador{
+    background:#111;
+    border:2px solid gold;
+    border-radius:15px;
+    padding:15px;
+    text-align:center;
+    width:250px;
+    margin:auto;
+}
+
+.marcador p{
+    font-size:20px;
+    margin:10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+    .mesa{
+        width:95%;
+
+    }
+    .carta{
+        width:60px;
+        height:90px;
+    }
+}
+
+.carta {
+    width: 80px;
+    height: 120px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.25s;
+    border: 2px solid #d4af37;
+    box-shadow: 0 5px 10px black;
+}
+
+.imagenCarta {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carta:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 0 20px #d4af37;
+}
+
+.carta.seleccionada {
+    transform: translateY(-20px);
+    border: 4px solid red;
+    box-shadow: 0 0 20px red;
+}
+/* ========================================
+   RECUADRO DE SUMA
+======================================== */
+
+.suma-box {
+    display: inline-block;
+    min-width: 180px;
+    padding: 12px 25px;
+    margin: 15px auto;
+
+    background: #111;
+    border: 2px solid #d4af37;
+    border-radius: 12px;
+
+    color: #ffd700;
+    font-size: 22px;
+    font-weight: bold;
+
+    box-shadow: 0 0 15px black;
+}
+
+
+/* ========================================
+   CARTAS DE LA MESA SELECCIONADAS
+======================================== */
+
+#mesaCartas .carta {
+    position: relative;
+    transition: 0.25s;
+}
+
+
+/* Primera carta seleccionada */
+
+#mesaCartas .carta.seleccionada-mesa {
+    transform: translateY(-20px);
+    border: 4px solid red;
+    box-shadow: 0 0 20px red;
+    z-index: 20;
+}
+
+
+/* Las siguientes quedan un poco más abajo */
+
+#mesaCartas .carta.seleccionada-mesa:nth-child(2) {
+    z-index: 10;
+}
+
+
+/* ========================================
+   MAZO RESTANTE
+======================================== */
+
+.mazo-restante {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+
+    text-align: center;
+    z-index: 30;
+}
+
+.carta-mazo {
+    width: 80px;
+    height: 120px;
+    background: white;
+    border: 3px solid #d4af37;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px black;
+}
+
+.carta-mazo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.mazo-restante p {
+    margin-top: 8px;
+    color: white;
+    font-size: 14px;
+}
+
+
+/* ========================================
+   MESA
+======================================== */
+
+.mesa {
+    position: relative;
+}
+
+/* ========================================
+   BOTÓN CENTRO DE AYUDA
+======================================== */
+
+.botonAyuda {
+    background: #D4AF37;
+    color: black;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botonAyuda:hover {
+    transform: scale(1.05);
+}
+
+
+/* ========================================
+   VENTANA DE AYUDA
+======================================== */
+
+.ventana-ayuda {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    z-index: 9999;
+
+    overflow-y: auto;
+}
+
+
+/* ========================================
+   CONTENIDO
+======================================== */
+
+.contenido-ayuda {
+
+    position: relative;
+
+    width: 80%;
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    padding: 35px;
+
+    background: #111;
+
+    border: 2px solid #D4AF37;
+
+    border-radius: 15px;
+
+    color: white;
+
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+
+.contenido-ayuda h1 {
+
+    text-align: center;
+
+    color: #D4AF37;
+
+    margin-bottom: 5px;
+}
+
+
+.subtitulo {
+
+    text-align: center;
+
+    color: #ccc;
+
+    margin-bottom: 30px;
+}
+
+
+/* ========================================
+   CERRAR
+======================================== */
+
+.cerrar-ayuda {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: #d40000;
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    padding: 0;
+}
+
+.carta-mazo.vacio {
+    border: 2px dashed #d4af37;
+    background: transparent;
+    box-shadow: none;
+}
+
+
+/* ========================================
+   SECCIONES
+======================================== */
+
+.ayuda-seccion {
+
+    background: #1b1b1b;
+
+    border-left: 4px solid #D4AF37;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    border-radius: 8px;
+}
+
+
+.ayuda-seccion h2 {
+
+    color: #D4AF37;
+
+    margin-top: 0;
+}
+
+
+.ayuda-seccion p {
+
+    line-height: 1.6;
+
+    color: #eee;
+}
+
+
+.ayuda-seccion li {
+
+    margin: 8px 0;
+
+    color: #eee;
+}
+
+
+/* ========================================
+   EJEMPLOS
+======================================== */
+
+.ejemplo-ayuda {
+
+    background: #0d0d0d;
+
+    border: 1px solid #D4AF37;
+
+    padding: 15px;
+
+    margin-top: 10px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 17px;
+}
+
+/* ========================================
+   BOTÓN CENTRO DE AYUDA
+======================================== */
+
+.botonAyuda {
+    position: fixed;
+
+    bottom: 20px;
+    right: 20px;
+
+    background: #D4AF37;
+    color: black;
+
+    border: none;
+    padding: 14px 22px;
+
+    border-radius: 30px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    z-index: 10000;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+
+    transition: 0.3s;
+}
+
+.botonAyuda:hover {
+    transform: scale(1.08);
+}
+
+/* ========================================
+   MENÚ HAMBURGUESA
+======================================== */
+
+.menu-juego {
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    z-index: 10000;
+}
+
+
+/* BOTÓN ☰ */
+
+.boton-menu {
+    width: 50px;
+    height: 50px;
+    background: #D4AF37;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    font-size: 26px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    padding: 0;
+}
+
+
+/* MENÚ */
+
+.menu-opciones {
+
+    display: none;
+
+    position: absolute;
+
+    top: 60px;
+    right: 0;
+
+    width: 190px;
+
+    background: #111;
+
+    border: 2px solid #D4AF37;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+}
+
+
+/* BOTONES DEL MENÚ */
+
+.menu-opciones button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 6px;
+
+    background: #1c1c1c;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-size: 15px;
+}
+
+
+.menu-opciones button:hover {
+
+    background: #D4AF37;
+
+    color: black;
+}
+
+
+/* ========================================
+   BOTÓN NUEVA PARTIDA
+======================================== */
+
+#botonNuevaPartida {
+
+    background: #D4AF37;
+
+    color: black;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+#sumaSeleccionada {
+    background: #111;
+    border: 2px solid #D4AF37;
+    color: #D4AF37;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    text-align: center;
+
+    margin: 10px auto;
+
+    width: fit-content;
+}
+
+/* ========================================
+   BOTÓN INICIO
+======================================== */
+
+.botonInicio {
+    position: fixed;
+
+    top: 20px;
+    left: 20px;
+
+    background: #D4AF37;
+    color: #000;
+
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    z-index: 10000;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+
+    transition: 0.3s;
+}
+
+.botonInicio:hover {
+    transform: scale(1.08);
+}
+
