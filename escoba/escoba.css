@@ -673,3 +673,12 @@ button:hover{
 .botonInicio:hover {
     transform: scale(1.08);
 }
+
+.botonInicio,
+.botonInicio:visited,
+.botonInicio:hover,
+.botonInicio:active {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    outline: none;
+}
