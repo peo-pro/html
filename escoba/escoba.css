@@ -680,3 +680,9 @@ button:hover{
     transform: scale(1.08);
 }
 
+.botonInicio {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
