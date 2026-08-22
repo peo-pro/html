@@ -126,7 +126,7 @@ function crearBaraja() {
 }
 
 function irInicio() {
-    window.location.href = "/index.html";
+    window.location.href = "index.html";
 }
 
 // ========================================
