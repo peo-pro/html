@@ -125,10 +125,6 @@ function crearBaraja() {
     }
 }
 
-function irInicio() {
-    window.location.href = "../index.html";
-}
-
 // ========================================
 // MEZCLAR
 // ========================================
