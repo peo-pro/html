@@ -651,38 +651,25 @@ button:hover{
 
 .botonInicio {
     position: fixed;
-
     top: 20px;
     left: 20px;
-
     background: #D4AF37;
     color: #000;
-
     border: none;
-
     padding: 12px 22px;
-
     border-radius: 8px;
-
     font-size: 16px;
     font-weight: bold;
-
     cursor: pointer;
-
     z-index: 10000;
-
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-
     transition: 0.3s;
-}
-
-.botonInicio:hover {
-    transform: scale(1.08);
-}
-
-.botonInicio {
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.botonInicio:hover {
+    transform: scale(1.08);
 }
